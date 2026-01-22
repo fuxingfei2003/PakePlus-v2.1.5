@@ -16,5 +16,5 @@ const hookClick = (e) => {
 window.open = function (url, target, features) {
     invoke('open_url', { url: url })
 }
-
+document.removeEventListener('click', hookClick, { capture: true });
 document.addEventListener('click', hookClick, { capture: true })
